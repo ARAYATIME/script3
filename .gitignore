@@ -79,3 +79,5 @@ Binaries/*
 */Binaries/*/**
 Intermediate/*
 */Intermediate/*/**
+script3/Intermediate/CachedAssetRegistry.bin
+script3/Intermediate/TargetInfo.json
