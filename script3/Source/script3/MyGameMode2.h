@@ -20,7 +20,7 @@ class SCRIPT3_API AMyGameMode2 : public AGameMode
 	virtual void Tick(float DeltaTime) override;
 
 	UPROPERTY(EditAnywhere)
-		TSubclassOf<APawn> SpawnbleHealth;
+		TSubclassOf<AActor> SpawnbleHealth;
 
 	
 
