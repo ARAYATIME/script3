@@ -16,7 +16,7 @@ void AInvisibilityPickup::OnSphereOverlap(UPrimitiveComponent* OverlappedCompone
 		UBuffComponent* Buff = MyCharacter->GetBuff();
 		if (Buff)
 		{
-			Buff->SetVisibility(false, InivisibilityBuffTime);
+			Buff->SetInvisibility(InivisibilityBuffTime);
 		}
 	}
 

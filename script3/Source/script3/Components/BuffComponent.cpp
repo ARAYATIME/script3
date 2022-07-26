@@ -58,7 +58,7 @@ void UBuffComponent::ResetSpeeds()
 
 }
 
-void UBuffComponent::SetVisibility(bool IsVisible, float BuffTime)
+void UBuffComponent::SetInvisibility(float BuffTime)
 {
 	if (MyCharacter == nullptr) return;
 

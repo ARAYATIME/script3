@@ -21,7 +21,7 @@ public:
 	void Heal(float HealAmount, float HealingTime);
 	void BuffSpeed(float BuffBaseSpeed, float BuffCrouchSpeed, float BuffTime);
 	void SetInitialSpeeds(float BaseSpeed, float CrouchSpeed);
-	void SetVisibility(bool IsVisible, float BuffTime);
+	void SetInvisibility(float BuffTime);
 
 protected:
 	// Called when the game starts
