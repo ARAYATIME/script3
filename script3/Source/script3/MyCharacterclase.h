@@ -52,7 +52,8 @@ public:
 	UUserWidget* Player_Health_Widget;
 
 	void RestartGame();
-
+	// function that gets called when character is fully initialized
+	virtual void PostInitializeComponents() override;
 
 protected:
 	// Called when the game starts or when spawned
@@ -65,4 +66,7 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
+private:
+	UPROPERTY(VisibleAnywhere)
+	class UBuffComponent* Buff;
 };

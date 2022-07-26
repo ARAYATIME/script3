@@ -5,6 +5,7 @@
 #include "Components/SkeletalMeshComponent.h"
 #include "GameFramework/Actor.h"
 #include "Kismet/GameplayStatics.h"
+#include "script3/Components/BuffComponent.h"
 
 
 // Sets default values
@@ -35,11 +36,25 @@ AMyCharacterclase::AMyCharacterclase()
     bDead = false;
     health = 100.0f;
     
+    // Create buff component
+    Buff = CreateDefaultSubobject<UBuffComponent>(TEXT("BuffComponent"));
 }
 
 void AMyCharacterclase::RestartGame()
 {
     UGameplayStatics::OpenLevel(this, FName(*GetWorld()->GetName()), false);
+}
+
+void AMyCharacterclase::PostInitializeComponents()
+{
+    // Call parent default function
+	Super::PostInitializeComponents();
+
+	if (Buff)
+	{
+        // assign my character to buff component
+		Buff->MyCharacter = this;
+	}
 }
 
 // Called when the game starts or when spawned

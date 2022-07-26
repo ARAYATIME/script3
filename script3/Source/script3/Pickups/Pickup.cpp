@@ -50,6 +50,11 @@ void APickup::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
+	// rotate pickup
+	if (PickupMesh)
+	{
+		PickupMesh->AddWorldRotation(FRotator(0.f, BaseTurnRate * DeltaTime, 0.f));
+	}
 }
 
 void APickup::Destroyed()
