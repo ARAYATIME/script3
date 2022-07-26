@@ -2,6 +2,7 @@
 
 #include "HealthPickup.h"
 #include "script3/MyCharacterclase.h"
+#include "script3/Components/BuffComponent.h"
 #include "NiagaraFunctionLibrary.h"
 #include "NiagaraComponent.h"
 
@@ -19,7 +20,11 @@ void AHealthPickup::OnSphereOverlap(UPrimitiveComponent* OverlappedComponent, AA
 
 	if (MyCharacter)
 	{
-
+		UBuffComponent* Buff = MyCharacter->GetBuff();
+		if (Buff)
+		{
+			Buff->Heal(HealAmount, HealingTime);
+		}
 	}
 
 	Destroy();

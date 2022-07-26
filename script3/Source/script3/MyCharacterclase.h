@@ -14,6 +14,8 @@
 #include "GameFramework/Controller.h"
 #include "GameFramework/CharacterMovementComponent.h"
 
+#include "script3/Components/BuffComponent.h"
+
 #include "Blueprint/UserWidget.h" 
 #include "MyCharacterclase.generated.h"
 
@@ -26,10 +28,10 @@ public:
 	// Sets default values for this character's properties
 	AMyCharacterclase();
 
-	UPROPERTY(visibleAnywhere, BlueprintReadOnly, Category = Camera)
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera)
 		USpringArmComponent* CameraBoom;
 
-	UPROPERTY(visibleAnywhere, BlueprintReadOnly, Category = Camera)
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera)
 		UCameraComponent* FollowCamera;
 
 	void MoveForward(float Axis);
@@ -55,6 +57,9 @@ public:
 	// function that gets called when character is fully initialized
 	virtual void PostInitializeComponents() override;
 
+	FORCEINLINE UBuffComponent* GetBuff() const { return Buff; }
+	FORCEINLINE void SetHealth(float Amount) { health = Amount; }
+	FORCEINLINE float GetHealth() const { return health; }
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
