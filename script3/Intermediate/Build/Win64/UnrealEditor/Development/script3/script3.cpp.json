@@ -1,0 +1,14 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\users\\xpc\\documents\\unreal projects\\script3\\source\\script3\\script3.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\users\\xpc\\documents\\unreal projects\\script3\\intermediate\\build\\win64\\script3editor\\development\\engine\\sharedpch.engine.shadowerrors.h.pch",
+        "Includes": [
+            "c:\\users\\xpc\\documents\\unreal projects\\script3\\intermediate\\build\\win64\\unrealeditor\\development\\script3\\definitions.script3.h",
+            "c:\\users\\xpc\\documents\\unreal projects\\script3\\source\\script3\\script3.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

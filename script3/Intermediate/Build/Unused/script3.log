@@ -1,0 +1,20 @@
+﻿  Using bundled DotNet SDK
+  Log file: C:\Users\XPC\AppData\Local\UnrealBuildTool\Log.txt
+  Building script3Editor...
+  Using Visual Studio 2022 14.32.31329 toolchain (C:\Program Files\Microsoft Visual Studio\2022\Professional\VC\Tools\MSVC\14.32.31326) and Windows 10.0.19041.0 SDK (C:\Program Files (x86)\Windows Kits\10).
+  [Adaptive Build] Excluded from script3 unity file: MyCharacterclase.cpp, MyGameMode.cpp, MyGameMode2.cpp, MyGameMode3.cpp, script3.cpp, script3Character.cpp, script3GameMode.cpp
+  Determining max actions to execute in parallel (4 physical cores, 8 logical cores)
+    Executing up to 4 processes, one per physical core
+  Building 8 actions with 4 processes...
+  [1/8] Compile script3.init.gen.cpp
+  [2/8] Compile MyGameMode2.cpp
+  [3/8] Compile MyGameMode2.gen.cpp
+  [4/8] Compile MyCharacterclase.gen.cpp
+  [5/8] Compile MyCharacterclase.cpp
+  [6/8] Link UnrealEditor-script3.lib
+     Creando biblioteca C:\Users\XPC\Documents\Unreal Projects\script3\Intermediate\Build\Win64\UnrealEditor\Development\script3\UnrealEditor-script3.lib y objeto C:\Users\XPC\Documents\Unreal Projects\script3\Intermediate\Build\Win64\UnrealEditor\Development\script3\UnrealEditor-script3.exp
+  [7/8] Link UnrealEditor-script3.dll
+     Creando biblioteca C:\Users\XPC\Documents\Unreal Projects\script3\Intermediate\Build\Win64\UnrealEditor\Development\script3\UnrealEditor-script3.suppressed.lib y objeto C:\Users\XPC\Documents\Unreal Projects\script3\Intermediate\Build\Win64\UnrealEditor\Development\script3\UnrealEditor-script3.suppressed.exp
+  [8/8] WriteMetadata script3Editor.target
+  Total time in Parallel executor: 14,04 seconds
+  Total execution time: 15,97 seconds
