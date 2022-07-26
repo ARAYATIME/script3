@@ -3,6 +3,7 @@
 
 #include "BuffComponent.h"
 #include "script3/MyCharacterclase.h"
+#include "GameFramework/CharacterMovementComponent.h"
 
 // Sets default values for this component's properties
 UBuffComponent::UBuffComponent()
@@ -23,6 +24,40 @@ void UBuffComponent::BeginPlay()
 
 }
 
+
+void UBuffComponent::SetInitialSpeeds(float BaseSpeed, float CrouchSpeed)
+{
+	InitialBaseSpeed = BaseSpeed;
+	InitialCrouchSpeed = CrouchSpeed;
+}
+
+void UBuffComponent::BuffSpeed(float BuffBaseSpeed, float BuffCrouchSpeed, float BuffTime)
+{
+	if (MyCharacter == nullptr) return;
+
+	MyCharacter->GetWorldTimerManager().SetTimer(
+		SpeedBuffTimer,
+		this,
+		&UBuffComponent::ResetSpeeds,
+		BuffTime
+	);
+
+	if (MyCharacter->GetCharacterMovement())
+	{
+		MyCharacter->GetCharacterMovement()->MaxWalkSpeed = BuffBaseSpeed;
+		MyCharacter->GetCharacterMovement()->MaxWalkSpeedCrouched = BuffCrouchSpeed;
+	}
+}
+
+void UBuffComponent::ResetSpeeds()
+{
+	if (MyCharacter == nullptr || MyCharacter->GetCharacterMovement() == nullptr) return;
+
+	MyCharacter->GetCharacterMovement()->MaxWalkSpeed = InitialBaseSpeed;
+	MyCharacter->GetCharacterMovement()->MaxWalkSpeedCrouched = InitialCrouchSpeed;
+
+}
+
 // Called every frame
 void UBuffComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
 {
@@ -36,8 +71,8 @@ void UBuffComponent::Heal(float HealAmount, float HealingTime)
 	bHealing = true;
 	HealingRate = HealAmount / HealingTime;
 	AmountToHeal += HealAmount;
-
 }
+
 
 void UBuffComponent::HealRampUp(float DeltaTime)
 {

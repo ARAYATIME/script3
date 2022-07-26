@@ -54,6 +54,8 @@ void AMyCharacterclase::PostInitializeComponents()
 	{
         // assign my character to buff component
 		Buff->MyCharacter = this;
+        // Initialize buff base walk and crouch speed
+        Buff->SetInitialSpeeds(GetCharacterMovement()->MaxWalkSpeed, GetCharacterMovement()->MaxWalkSpeedCrouched);
 	}
 }
 

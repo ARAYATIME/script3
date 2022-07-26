@@ -19,6 +19,9 @@ public:
 	friend class AMyCharacterclase;
 
 	void Heal(float HealAmount, float HealingTime);
+	void BuffSpeed(float BuffBaseSpeed, float BuffCrouchSpeed, float BuffTime);
+	void SetInitialSpeeds(float BaseSpeed, float CrouchSpeed);
+
 protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;
@@ -27,9 +30,20 @@ private:
 	UPROPERTY()
 	class AMyCharacterclase* MyCharacter;
 
+	/*
+	* Heal Buff
+	*/
 	bool bHealing = false;
 	float HealingRate = 0;
 	float AmountToHeal = 0.f;
+
+	/*
+	* Speed Buff
+	*/
+	FTimerHandle SpeedBuffTimer;
+	void ResetSpeeds();
+	float InitialBaseSpeed;
+	float InitialCrouchSpeed;
 
 public:	
 	// Called every frame
