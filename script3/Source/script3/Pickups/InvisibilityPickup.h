@@ -1,0 +1,28 @@
+// Fill out your copyright notice in the Description page of Project Settings.
+
+#pragma once
+
+#include "CoreMinimal.h"
+#include "Pickup.h"
+#include "InvisibilityPickup.generated.h"
+
+/**
+ * 
+ */
+UCLASS()
+class SCRIPT3_API AInvisibilityPickup : public APickup
+{
+	GENERATED_BODY()
+protected:
+	virtual void OnSphereOverlap(
+		UPrimitiveComponent* OverlappedComponent,
+		AActor* OtherActor,
+		UPrimitiveComponent* OtherComp,
+		int32 OtherBodyIndex,
+		bool bFromSweep,
+		const FHitResult& SweepResult
+	);
+private:
+	UPROPERTY(EditAnywhere)
+	float InivisibilityBuffTime = 5.f;
+};

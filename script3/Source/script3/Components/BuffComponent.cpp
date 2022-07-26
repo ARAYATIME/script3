@@ -58,6 +58,26 @@ void UBuffComponent::ResetSpeeds()
 
 }
 
+void UBuffComponent::SetVisibility(bool IsVisible, float BuffTime)
+{
+	if (MyCharacter == nullptr) return;
+
+	MyCharacter->GetWorldTimerManager().SetTimer(
+		SpeedBuffTimer,
+		this,
+		&UBuffComponent::ResetVisibility,
+		BuffTime
+	);
+	MyCharacter->GetMesh()->SetVisibility(false);
+}
+
+void UBuffComponent::ResetVisibility()
+{
+	if (MyCharacter == nullptr || MyCharacter->GetCharacterMovement() == nullptr) return;
+
+	MyCharacter->GetMesh()->SetVisibility(true);
+}
+
 // Called every frame
 void UBuffComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
 {
